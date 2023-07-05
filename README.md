@@ -14,6 +14,8 @@
 
 ![controls](https://github.com/slavcetrajkovski/ChessGameVP/assets/126784837/ef7b6250-59e8-4c43-b27a-4d003e60801d)
 
+Копче "Restart" кое овозможува започнување на нова игра, како и стрелки за навраќање на потег.
+
 3. Тајмер
 
 ![timer](https://github.com/slavcetrajkovski/ChessGameVP/assets/126784837/a1884ee4-c8f7-43cc-a750-cfe7fb4b4629)
