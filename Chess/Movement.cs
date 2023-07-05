@@ -68,7 +68,7 @@ namespace Chess
             }
             for (int i = 0; i < availableMoves.Length; i++)
                 if (availableMoves[i].HasValue)
-                    return true;//it means that there is a solution to prevent the checkmate.
+                    return true;
             return false;
         }
         bool CanMakeMove(int y, int x){
@@ -159,9 +159,9 @@ namespace Chess
                         }
                         return true;
                     }
-                    if (pieceTile.piece.firstMove && Board.GetPiece(pieceTile.GetY, pieceTile.GetX + 3).firstMove) //right castling
+                    if (pieceTile.piece.firstMove && Board.GetPiece(pieceTile.GetY, pieceTile.GetX + 3).firstMove) 
                         moves[8] = CanCastle(1) ? destination(0,2) : null;
-                    if (pieceTile.piece.firstMove && Board.GetPiece(pieceTile.GetY, pieceTile.GetX - 4).firstMove) //left castling
+                    if (pieceTile.piece.firstMove && Board.GetPiece(pieceTile.GetY, pieceTile.GetX - 4).firstMove) 
                         moves[9] = CanCastle(-1) ? destination(0, -2) : null;
                     break;
                 case PieceKind.Pawn:
@@ -178,7 +178,7 @@ namespace Chess
             return moves;
         }
         int dir { get { return pieceTile.piece.color == ChessColor.BLACK ? 1 : -1; } }
-        void LineMove(PieceMove?[] moves,bool straightLine){ // for pieces like Bishop, Queen and Rook 
+        void LineMove(PieceMove?[] moves,bool straightLine){ 
             int rookDir = straightLine ? 0 : 1; int bishopDir = straightLine ? 1 : -1;
             for(int i = 1; i < 9; i++) moves[move] = LineDestination(-i,i*bishopDir*rookDir);
             previousMove = new PieceMove(1, 1); for (int i = 1; i < 9; i++) moves[move] = LineDestination(i, i*rookDir);
@@ -189,7 +189,7 @@ namespace Chess
             if (previousMove == null)return null;
             return destination(y,x);
         }
-        PieceMove? destination(int y, int x) { // for pieces like Knight and King
+        PieceMove? destination(int y, int x) { 
             int yLocation = pieceTile.location.y + y;
             int xLocation = pieceTile.location.x + x;
             move++;
